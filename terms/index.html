@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="only light">
+  <meta name="theme-color" content="#f6f4f0">
+  <title>Terms of Use — Miru</title>
+  <meta name="description" content="Read the Miru Terms of Use, including app usage, subscriptions, acceptable use and legal terms.">
+  <link rel="canonical" href="https://miru.app/terms">
+  <meta name="robots" content="index, follow">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #1a1a1a;
+      --paper: #f6f4f0;
+      --stone: #d4cfc7;
+      --mist: #e8e4dd;
+      --accent: #c45d3e;
+      --warm-gray: #6b635b;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { color-scheme: only light; }
+    body {
+      font-family: var(--font-body);
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      padding: 1.2rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(246,244,240,0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--stone);
+    }
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .nav-logo span {
+      margin-left: 0.45rem;
+      font-size: 0.85rem;
+      color: var(--warm-gray);
+      font-style: italic;
+    }
+    .nav-links { display: flex; gap: 1.5rem; }
+    .nav-links a {
+      font-size: 0.78rem;
+      color: var(--warm-gray);
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .hero {
+      padding: 5.5rem 1.5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-kanji {
+      position: absolute;
+      inset: 50% auto auto 50%;
+      transform: translate(-50%, -55%);
+      font-size: clamp(5rem, 16vw, 11rem);
+      color: var(--mist);
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
+      font-weight: 300;
+      user-select: none;
+      pointer-events: none;
+    }
+    .hero-label {
+      position: relative;
+      font-size: 0.72rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 1.2rem;
+    }
+    .hero h1 {
+      position: relative;
+      font-family: var(--font-display);
+      font-size: clamp(2.7rem, 6vw, 4.5rem);
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      position: relative;
+      max-width: 640px;
+      margin: 0 auto;
+      color: var(--warm-gray);
+    }
+    .content {
+      max-width: 840px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+    .card {
+      background: rgba(232,228,221,0.45);
+      border: 1px solid var(--stone);
+      border-radius: 20px;
+      padding: 2rem 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+    .meta {
+      display: inline-block;
+      margin-bottom: 0.9rem;
+      padding: 0.38rem 0.8rem;
+      border-radius: 999px;
+      background: var(--mist);
+      color: var(--warm-gray);
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    h2 {
+      font-family: var(--font-display);
+      font-size: 1.9rem;
+      font-weight: 400;
+      margin-bottom: 0.8rem;
+    }
+    p, li {
+      color: var(--warm-gray);
+      font-size: 0.95rem;
+    }
+    ul { padding-left: 1.15rem; margin-top: 0.5rem; }
+    a {
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    footer {
+      border-top: 1px solid var(--stone);
+      padding: 2rem 1.5rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .footer-logo { font-family: var(--font-display); font-size: 1.2rem; }
+    .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .footer-links a {
+      font-size: 0.78rem;
+      color: var(--warm-gray);
+      text-decoration: none;
+    }
+    .footer-copy { font-size: 0.72rem; color: var(--stone); }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      footer { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <nav aria-label="Main navigation">
+    <a href="/" class="nav-logo">Miru <span>見る</span></a>
+    <div class="nav-links">
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/">Home</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-kanji" aria-hidden="true">見る</div>
+    <div class="hero-label">Legal</div>
+    <h1>Terms of Use</h1>
+    <p>These terms explain how Miru may be used, how subscriptions work and the conditions that apply when using the app.</p>
+  </header>
+
+  <main class="content">
+    <section class="card">
+      <div class="meta">Effective date: [Month Day, Year]</div>
+      <p>These Terms of Use govern your use of Miru. By downloading, accessing or using Miru, you agree to these Terms.</p>
+    </section>
+
+    <section class="card">
+      <h2>1. About Miru</h2>
+      <p>Miru is a habit tracker and reflection app that helps users log habits, tasks, books and daily scores, and provides insights based on data entered into the app.</p>
+    </section>
+
+    <section class="card">
+      <h2>2. Eligibility</h2>
+      <p>You must be legally permitted to use Miru in your jurisdiction. If you are below the age required to enter into a binding agreement where you live, you may use Miru only with appropriate permission from a parent or legal guardian.</p>
+    </section>
+
+    <section class="card">
+      <h2>3. License to use the app</h2>
+      <p>Miru grants you a limited, non-exclusive, non-transferable and revocable license to use the app for personal, non-commercial use, subject to these Terms and any applicable platform rules.</p>
+      <ul>
+        <li>copy, modify or distribute the app except as permitted by law</li>
+        <li>reverse engineer or attempt to extract source code except where permitted by law</li>
+        <li>use the app in a way that interferes with its operation</li>
+        <li>use the app for unlawful purposes</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>4. User content</h2>
+      <p>You are responsible for the information you enter into Miru, including habits, tasks, notes, books and daily reflections. You retain ownership of your content, subject to any rights needed for Miru to operate and provide its services.</p>
+    </section>
+
+    <section class="card">
+      <h2>5. Subscriptions</h2>
+      <p>Some features of Miru may require a paid subscription. If you purchase a subscription through Apple:</p>
+      <ul>
+        <li>payment will be charged to your Apple account</li>
+        <li>the subscription may renew automatically unless canceled before the end of the current billing period</li>
+        <li>you can manage or cancel your subscription through your Apple account settings</li>
+      </ul>
+      <p>Prices and subscription terms may change in the future where permitted by law and platform rules.</p>
+    </section>
+
+    <section class="card">
+      <h2>6. Free and premium features</h2>
+      <p>Miru may offer some features for free and reserve other features for paid subscribers. Features may change over time.</p>
+    </section>
+
+    <section class="card">
+      <h2>7. No medical or professional advice</h2>
+      <p>Miru is provided for self-tracking, reflection and informational purposes only. Miru does not provide medical, psychological, psychiatric, therapeutic or professional advice. You should not rely on Miru as a substitute for professional care, diagnosis, treatment or advice.</p>
+    </section>
+
+    <section class="card">
+      <h2>8. Availability and changes</h2>
+      <p>Miru may be updated, modified, suspended or discontinued in whole or in part at any time. Miru is not guaranteed to be continuously available, error-free or uninterrupted.</p>
+    </section>
+
+    <section class="card">
+      <h2>9. Intellectual property</h2>
+      <p>Miru, including its name, branding, design, software and original content, is owned by Miru or licensed to Miru and is protected by applicable intellectual property laws.</p>
+    </section>
+
+    <section class="card">
+      <h2>10. Privacy</h2>
+      <p>Your use of Miru is also governed by the <a href="/privacy">Privacy Policy</a>.</p>
+    </section>
+
+    <section class="card">
+      <h2>11. Disclaimer of warranties</h2>
+      <p>To the fullest extent permitted by law, Miru is provided on an “as is” and “as available” basis without warranties of any kind, whether express or implied.</p>
+    </section>
+
+    <section class="card">
+      <h2>12. Limitation of liability</h2>
+      <p>To the fullest extent permitted by law, Miru will not be liable for any indirect, incidental, special, consequential or punitive damages, or for any loss of data, profits, goodwill or business opportunity arising out of or related to your use of the app.</p>
+    </section>
+
+    <section class="card">
+      <h2>13. Termination</h2>
+      <p>Miru may suspend or terminate access if these Terms are violated or the app is misused. You may stop using Miru at any time.</p>
+    </section>
+
+    <section class="card">
+      <h2>14. Governing law</h2>
+      <p>These Terms are governed by the laws of the Netherlands, unless mandatory consumer protection laws in your country of residence require otherwise.</p>
+    </section>
+
+    <section class="card">
+      <h2>15. Changes to these terms</h2>
+      <p>These Terms may be updated from time to time. If material changes are made, the updated version will be posted with a new effective date.</p>
+    </section>
+
+    <section class="card">
+      <h2>16. Contact</h2>
+      <p>If you have questions about these Terms, contact:</p>
+      <p>Miru<br><a href="mailto:[support@email.com]">[support@email.com]</a><br>[Business or mailing address]<br><a href="https://miru.app">miru.app</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-logo">Miru</div>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+      <a href="/">Home</a>
+    </nav>
+    <div class="footer-copy">&copy; 2026 Miru. All rights reserved.</div>
+  </footer>
+</body>
+</html>
