@@ -13,6 +13,7 @@
 <meta name="robots" content="index, follow">
 <meta name="author" content="Miru">
 <meta name="keywords" content="habit tracker, habit tracker for Mac, macOS habit tracker, iOS habit tracker, habit tracker for iPhone, ML habit tracker, AI habit tracker, productivity app, daily routine tracker, habit analytics, habit chain discovery, data driven habit tracker, desktop habit tracker">
+<meta name="miru-download-url" content="https://apps.apple.com/app/idXXXXXXXXX">
 
 <!-- SEO: Open Graph -->
 <meta property="og:title" content="Miru — ML-Powered Habit Tracker for macOS and iOS">
@@ -41,17 +42,17 @@
   "@type": "SoftwareApplication",
   "name": "Miru",
   "description": "An ML-powered macOS and iOS habit tracker that uses machine learning and habit chain discovery to reveal hidden patterns in your daily habits and productivity.",
-  "operatingSystem": "macOS",
+  "operatingSystem": "macOS, iOS",
   "applicationCategory": "LifestyleApplication",
   "softwareVersion": "1.0",
-  "downloadUrl": "https://apps.apple.com/app/miru/idXXXXXXXXX",
+  "downloadUrl": "https://getmiru.net/#download",
   "featureList": "ML-powered habit insights, machine learning analysis, Habit chain discovery, Streak tracking, Friction scoring, Smart scheduling, Native macOS design, Privacy-first local data",
   "offers": {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "EUR",
     "availability": "https://schema.org/InStock",
-    "description": "Free tier with unlimited habits. Premium at €3.99/month for ML insights."
+    "description": "Free tier available. Premium features unlock in the app with App Store pricing shown based on your region."
   },
   "author": {
     "@type": "Organization",
@@ -80,7 +81,7 @@
       "name": "Is Miru free?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Miru's free tier includes unlimited habits, tasks, friction scoring, streak tracking, energy-based recommendations and accountability partners. Premium (€3.99/month) unlocks Machine Learning-powered insights like productivity analysis and habit chain discovery."
+        "text": "Yes. Miru's free tier includes unlimited habits, tasks, friction scoring, streak tracking, energy-based recommendations and accountability partners. Premium unlocks Machine Learning-powered insights like productivity analysis and habit chain discovery. Live pricing is shown in the app through the App Store."
       }
     },
     {
@@ -88,7 +89,7 @@
       "name": "Does Miru work on Mac and iPhone only?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Miru is currently built natively for  and iOS, designed for productivity-focused individuals who spend their workday at a Mac or want to track their habits on their iPhone."
+        "text": "Miru is built natively for macOS and iOS, designed for productivity-focused people who want to track habits on their Mac or iPhone."
       }
     },
     {
@@ -204,6 +205,19 @@
   .nav-links a:hover { color: var(--ink); }
   .nav-cta { background: var(--ink) !important; color: var(--paper) !important; padding: 0.6rem 1.5rem; border-radius: 100px; transition: transform 0.3s, opacity 0.3s !important; }
   .nav-cta:hover { transform: scale(1.03); opacity: 0.9; }
+  .nav-menu-button {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--stone);
+    border-radius: 999px;
+    background: rgba(246, 244, 240, 0.9);
+    color: var(--ink);
+    cursor: pointer;
+  }
+  .nav-menu-button svg { width: 18px; height: 18px; }
 
   /* Hero */
   .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 8rem 2rem 4rem; position: relative; background-color: #f6f4f0; }
@@ -307,9 +321,31 @@
   .faq h2 { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; text-align: center; margin-bottom: 3rem; }
   .faq-item { border-top: 1px solid var(--mist); padding: 1.5rem 0; }
   .faq-item:last-child { border-bottom: 1px solid var(--mist); }
-  .faq-item h3 { font-size: 1rem; font-weight: 500; color: var(--ink); margin-bottom: 0.6rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; min-height: 44px; }
-  .faq-item h3::after { content: '+'; font-size: 1.2rem; color: var(--stone); font-weight: 300; transition: transform 0.3s; }
-  .faq-item.open h3::after { transform: rotate(45deg); }
+  .faq-item h3 { margin-bottom: 0; }
+  .faq-question {
+    width: 100%;
+    min-height: 44px;
+    border: none;
+    background: transparent;
+    padding: 0;
+    text-align: left;
+    font: inherit;
+    color: var(--ink);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+  .faq-question span:first-child { font-size: 1rem; font-weight: 500; }
+  .faq-question span:last-child {
+    font-size: 1.2rem;
+    color: var(--stone);
+    font-weight: 300;
+    transition: transform 0.3s;
+    flex-shrink: 0;
+  }
+  .faq-item.open .faq-question span:last-child { transform: rotate(45deg); }
   .faq-item p { font-size: 0.9rem; line-height: 1.7; color: var(--warm-gray); font-weight: 300; max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease; padding-top: 0; }
   .faq-item.open p { max-height: 300px; padding-top: 0.3rem; }
 
@@ -340,7 +376,25 @@
   /* Responsive */
   @media (max-width: 768px) {
     nav { padding: 1.2rem 1.5rem; }
-    .nav-links { display: none; }
+    .nav-menu-button { display: inline-flex; }
+    .nav-links {
+      position: absolute;
+      top: calc(100% + 0.75rem);
+      left: 1rem;
+      right: 1rem;
+      display: none;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0.75rem;
+      padding: 1rem;
+      background: rgba(246, 244, 240, 0.98);
+      border: 1px solid var(--stone);
+      border-radius: 18px;
+      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.08);
+    }
+    nav[data-open="true"] .nav-links { display: flex; }
+    .nav-links a { padding: 0.6rem 0.2rem; }
+    .nav-cta { text-align: center; }
     .story { padding: 5rem 1.5rem; }
     .app-overview { padding: 4rem 1.5rem; }
     .pillars { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
@@ -364,9 +418,20 @@
 <body>
 
 <!-- SEO: Semantic nav element -->
-<nav aria-label="Main navigation">
-  <a href="#" class="nav-logo" aria-label="Miru home">Miru <span>見る</span></a>
-  <div class="nav-links">
+<nav aria-label="Main navigation" data-open="false">
+  <a href="/" class="nav-logo" aria-label="Miru home">Miru <span>見る</span></a>
+  <button
+    type="button"
+    class="nav-menu-button"
+    aria-expanded="false"
+    aria-controls="main-nav-links"
+    aria-label="Open navigation menu"
+  >
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+  </button>
+  <div class="nav-links" id="main-nav-links">
     <a href="#story">Story</a>
     <a href="#app">The App</a>
     <a href="#insights">Insights</a>
@@ -382,10 +447,10 @@
   <div class="hero-kanji" aria-hidden="true">見る</div>
   <div class="hero-label">macOS and iOS Habit Tracker with Machine Learning</div>
   <!-- SEO: Single H1 with primary keyword -->
-  <h1>The intelligent habit tracker for <em>macOS and iOS</em></span></h1>
+  <h1>The intelligent habit tracker for <em>macOS and iOS</em></h1>
   <p class="hero-sub">Miru combines daily habit tracking, weighted tasks and machine learning to reveal which behaviours actually drive your most productive days. Built natively for Mac and iPhone.</p>
   <div class="hero-buttons">
-    <a href="#download" class="btn-primary">Download for Mac</a>
+    <a href="#" class="btn-primary js-download-link">Get Miru</a>
     <a href="#app" class="btn-secondary">See how it works</a>
   </div>
   <div class="scroll-hint" aria-hidden="true">
@@ -431,7 +496,7 @@
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
         </div>
         <h3>ML-powered insights</h3>
-        <p>Miru's Machine Learning Engine turn your daily data into a personal behavioural science engine. See what actually drives your productivity score.</p>
+        <p>Miru's Machine Learning Engine turns your daily data into a personal behavioural science engine. See what actually drives your productivity score.</p>
       </article>
       <article class="pillar reveal">
         <div class="pillar-icon" style="background: rgba(122,139,111,0.1); color: var(--sage);">
@@ -555,7 +620,7 @@
   <p class="reveal">Habit stacking, the practice of anchoring new habits to existing ones, is another evidence-based technique. Miru's habit chain discovery takes this further by using your own data to <strong>find which habits naturally co-occur</strong> in your life, revealing connections you might never notice on your own.</p>
   <div class="privacy-note reveal">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-    <span>Your data never leaves your device. All ML analysis runs locally on your Mac.</span>
+    <span>Your data never leaves your device. All ML analysis runs locally on-device.</span>
   </div>
 </section>
 
@@ -582,8 +647,8 @@
       </div>
       <div class="pricing-card featured reveal">
         <h3>Premium</h3>
-        <div class="price">€3.99 <span>/ month</span></div>
-        <div class="price-note">Cancel anytime. Renews monthly.</div>
+        <div class="price">Shown in app <span>/ monthly</span></div>
+        <div class="price-note">App Store pricing varies by region. Cancel anytime.</div>
         <ul>
           <li>Everything in Free</li>
           <li>Personalized productivity insights from Miru’s ML Engine</li>
@@ -603,43 +668,83 @@
   <h2 class="reveal">Frequently asked questions</h2>
 
   <div class="faq-item reveal">
-    <h3 onclick="this.parentElement.classList.toggle('open')">Do habit trackers actually work?</h3>
-    <p>Yes. A <a href="https://pubmed.ncbi.nlm.nih.gov/26479070/" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: underline; text-underline-offset: 3px;">meta-analysis of 138 studies</a> covering over 19,000 participants found that self-monitoring significantly increases goal attainment. The key is tracking consistently and reviewing your data. Miru goes further by using machine learning to surface patterns you'd miss on your own.</p>
+    <h3>
+      <button type="button" class="faq-question" aria-expanded="false">
+        <span>Do habit trackers actually work?</span>
+        <span aria-hidden="true">+</span>
+      </button>
+    </h3>
+    <p hidden>Yes. A <a href="https://pubmed.ncbi.nlm.nih.gov/26479070/" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: underline; text-underline-offset: 3px;">meta-analysis of 138 studies</a> covering over 19,000 participants found that self-monitoring significantly increases goal attainment. The key is tracking consistently and reviewing your data. Miru goes further by using machine learning to surface patterns you'd miss on your own.</p>
   </div>
 
   <div class="faq-item reveal">
-    <h3 onclick="this.parentElement.classList.toggle('open')">What makes Miru different from other habit trackers?</h3>
-    <p>Most habit trackers stop at streaks and checkmarks. Miru uses its machine learning engine to model which habits statistically predict your best productivity days and conditional probability to discover hidden chains between habits. It shows the math, not just the result.</p>
+    <h3>
+      <button type="button" class="faq-question" aria-expanded="false">
+        <span>What makes Miru different from other habit trackers?</span>
+        <span aria-hidden="true">+</span>
+      </button>
+    </h3>
+    <p hidden>Most habit trackers stop at streaks and checkmarks. Miru uses its machine learning engine to model which habits statistically predict your best productivity days and conditional probability to discover hidden chains between habits. It shows the math, not just the result.</p>
   </div>
 
   <div class="faq-item reveal">
-    <h3 onclick="this.parentElement.classList.toggle('open')">Is Miru free to use?</h3>
-    <p>Yes. The free tier includes unlimited habits, tasks, friction scoring, streak tracking, energy-based recommendations and accountability partners. Premium (€3.99/month) unlocks the ML-powered insights: productivity analysis, habit chains, smart scheduling and failure patterns.</p>
+    <h3>
+      <button type="button" class="faq-question" aria-expanded="false">
+        <span>Is Miru free to use?</span>
+        <span aria-hidden="true">+</span>
+      </button>
+    </h3>
+    <p hidden>Yes. The free tier includes unlimited habits, tasks, friction scoring, streak tracking, energy-based recommendations and accountability partners. Premium unlocks the ML-powered insights: productivity analysis, habit chains, smart scheduling and failure patterns. Live pricing is shown in the app through the App Store.</p>
   </div>
 
   <div class="faq-item reveal">
-    <h3 onclick="this.parentElement.classList.toggle('open')">How does machine learning work in a habit tracker?</h3>
-    <p>Once you’ve logged 10 days of data, Miru’s Machine Learning Engine comes to life. It studies your completed habits, links them to your productivity scores, and reveals hidden patterns between your behaviors. Your data stays private, because all analysis runs directly on your device.</p>
+    <h3>
+      <button type="button" class="faq-question" aria-expanded="false">
+        <span>How does machine learning work in a habit tracker?</span>
+        <span aria-hidden="true">+</span>
+      </button>
+    </h3>
+    <p hidden>Once you’ve logged 10 days of data, Miru’s Machine Learning Engine comes to life. It studies your completed habits, links them to your productivity scores, and reveals hidden patterns between your behaviors. Your data stays private, because all analysis runs directly on your device.</p>
   </div>
 
   <div class="faq-item reveal">
-    <h3 onclick="this.parentElement.classList.toggle('open')">How long does it take to build a habit?</h3>
-    <p><a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/ejsp.674" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: underline; text-underline-offset: 3px;">Research from University College London</a> found it takes an average of 66 days, with a range of 18 to 254 days depending on the habit's complexity. Miru's friction scoring helps you track this progression: when seven consecutive completions are rated "easy," the habit has likely become automatic.</p>
+    <h3>
+      <button type="button" class="faq-question" aria-expanded="false">
+        <span>How long does it take to build a habit?</span>
+        <span aria-hidden="true">+</span>
+      </button>
+    </h3>
+    <p hidden><a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/ejsp.674" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: underline; text-underline-offset: 3px;">Research from University College London</a> found it takes an average of 66 days, with a range of 18 to 254 days depending on the habit's complexity. Miru's friction scoring helps you track this progression: when seven consecutive completions are rated "easy," the habit has likely become automatic.</p>
   </div>
 
   <div class="faq-item reveal">
-    <h3 onclick="this.parentElement.classList.toggle('open')">How many habits should I track at once?</h3>
-    <p>Most experts recommend starting with 3 to 5 habits. Tracking too many at once spreads your willpower thin. Miru's Machine Learning Engine helps you identify which habits have the biggest positive impact so you can focus your energy where it matters most.</p>
+    <h3>
+      <button type="button" class="faq-question" aria-expanded="false">
+        <span>How many habits should I track at once?</span>
+        <span aria-hidden="true">+</span>
+      </button>
+    </h3>
+    <p hidden>Most experts recommend starting with 3 to 5 habits. Tracking too many at once spreads your willpower thin. Miru's Machine Learning Engine helps you identify which habits have the biggest positive impact so you can focus your energy where it matters most.</p>
   </div>
 
   <div class="faq-item reveal">
-    <h3 onclick="this.parentElement.classList.toggle('open')">Can I track habits on my Mac without using my phone?</h3>
-    <p>Yes. Miru is built natively for macOS. If you spend your workday at a Mac, you can track habits, complete tasks and log your daily scores without ever picking up your phone.</p>
+    <h3>
+      <button type="button" class="faq-question" aria-expanded="false">
+        <span>Can I track habits on my Mac without using my phone?</span>
+        <span aria-hidden="true">+</span>
+      </button>
+    </h3>
+    <p hidden>Yes. Miru is built natively for macOS. If you spend your workday at a Mac, you can track habits, complete tasks and log your daily scores without ever picking up your phone.</p>
   </div>
 
   <div class="faq-item reveal">
-    <h3 onclick="this.parentElement.classList.toggle('open')">Is my habit data private?</h3>
-    <p>Yes. All data stays on your device. Miru does not send your habit data to any server. The machine learning analysis runs locally using on-device computation. No account required.</p>
+    <h3>
+      <button type="button" class="faq-question" aria-expanded="false">
+        <span>Is my habit data private?</span>
+        <span aria-hidden="true">+</span>
+      </button>
+    </h3>
+    <p hidden>Yes. All data stays on your device. Miru does not send your habit data to any server. The machine learning analysis runs locally using on-device computation. No account required.</p>
   </div>
 </section>
 
@@ -650,12 +755,12 @@
 </section>
 
 <!-- CTA -->
-<section class="cta" id="download" aria-label="Download Miru habit tracker for macOS">
+<section class="cta" id="download" aria-label="Download Miru habit tracker for macOS and iOS">
   <div class="cta-kanji" aria-hidden="true">見</div>
   <h2 class="reveal">Ready to <em>see</em> your patterns?</h2>
   <p class="reveal">Download Miru and start building habits backed by data.</p>
-  <a href="#" class="btn-primary reveal" aria-label="Download Miru habit tracker for macOS">Download for Mac</a>
-  <div class="cta-note reveal">Available on macOS.</div>
+  <a href="#" class="btn-primary reveal js-download-link" aria-label="Download Miru habit tracker for Mac and iPhone">Get Miru</a>
+  <div class="cta-note reveal">Available for Mac and iPhone.</div>
 </section>
 
 <footer>
@@ -670,6 +775,50 @@
 </footer>
 
 <script>
+  const downloadUrl = document.querySelector('meta[name="miru-download-url"]')?.content?.trim();
+  document.querySelectorAll('.js-download-link').forEach(link => {
+    if (downloadUrl) {
+      link.href = downloadUrl;
+      link.target = '_blank';
+      link.rel = 'noopener';
+    }
+  });
+
+  const mainNav = document.querySelector('nav[aria-label="Main navigation"]');
+  const menuButton = document.querySelector('.nav-menu-button');
+  const navLinks = document.querySelectorAll('#main-nav-links a');
+
+  if (mainNav && menuButton) {
+    menuButton.addEventListener('click', () => {
+      const isOpen = mainNav.dataset.open === 'true';
+      mainNav.dataset.open = isOpen ? 'false' : 'true';
+      menuButton.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+      menuButton.setAttribute('aria-label', isOpen ? 'Open navigation menu' : 'Close navigation menu');
+    });
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mainNav.dataset.open = 'false';
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.setAttribute('aria-label', 'Open navigation menu');
+      });
+    });
+  }
+
+  document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+      const item = button.closest('.faq-item');
+      const answer = item?.querySelector('p');
+      const isOpen = item?.classList.contains('open');
+
+      if (!item || !answer) return;
+
+      item.classList.toggle('open', !isOpen);
+      button.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+      answer.hidden = isOpen;
+    });
+  });
+
   // Scroll reveal
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
